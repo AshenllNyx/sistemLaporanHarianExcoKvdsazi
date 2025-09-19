@@ -89,5 +89,10 @@ return new class extends Migration
     {
         Schema::dropIfExists('reports');
         Schema::dropIfExists('sickness_report');
+        Schema::dropIfExists('diciplane_reorts');
+        Schema::dropIfExists('dorm_report');
+        Schema::dropIfExists('dorm_list');
+        Schema::dropIfExists('mass_hall_report');
+        Schema::dropIfExists('damage_report');
     }
 };
