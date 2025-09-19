@@ -38,7 +38,7 @@ return new class extends Migration
             $table->string('student_name');
             $table->string('class');
             $table->foreignId('report_id')->constrained('reports', 'id_laporan')->onDelete('cascade');
-            $table->string('type_of_diciplane');
+            $table->string('type_of_discipline_issue');
             $table->text('action_taken');   
             $table->timestamps();
         });
@@ -62,9 +62,21 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            
+        Schema::create('mass_hall_report', function (Blueprint $table) {
+            $table->id('id_mass_hall');
+            $tabel->String('menu_by_weeks');
+            $table->String('quality_of_food');
+            $table->String('student_discipline');
+            $table->foreignId('report_id')->constrained('reports', 'id_laporan')->onDelete('cascade');  
+            $table->timestamps();
+        });
+
+        Schema::create('damage_report', function (Blueprint $table) {
+            $table->id('id_damage');
+            $table->string('location_of_damage');
+            $table->string('type_of_damage');
+            $table->text('action_taken');
+            $table->foreignId('report_id')->constrained('reports', 'id_laporan')->onDelete('cascade');
             $table->timestamps();
         });
 
